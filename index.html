@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carbon-Aware Machine Learning Scheduling — Run AI workloads when electricity is cleanest. Reduce carbon emissions with intelligent scheduling.">
+    <title>CAML — Carbon-Aware Machine Learning Scheduling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ======== NAVIGATION ======== -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">CAML</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#" class="nav-link active" data-page="landing">Home</a>
+                <a href="#" class="nav-link" data-page="dashboard">Dashboard</a>
+                <a href="#" class="nav-link" data-page="logistics">Logistics</a>
+                <a href="#" class="nav-link" data-page="agriculture">Agriculture</a>
+                <a href="#" class="nav-link" data-page="admin">Admin Panel</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-nav" id="btn-get-started" data-page="dashboard">Launch Dashboard</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======== LANDING PAGE ======== -->
+    <section id="page-landing" class="page active">
+        <!-- Hero -->
+        <div class="hero" id="hero-section">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-content">
+                <div class="hero-badge">🌱 Sustainable AI Infrastructure</div>
+                <h1 class="hero-title">
+                    Carbon-Aware<br>
+                    <span class="gradient-text">Machine Learning</span><br>
+                    Scheduling
+                </h1>
+                <p class="hero-subtitle">Run AI workloads when electricity is cleanest. Reduce your data center's carbon footprint with intelligent, forecast-driven scheduling.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="btn-view-dashboard" data-page="dashboard">
+                        <span>View Dashboard</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    <button class="btn-secondary" id="btn-learn-more">
+                        <span>Learn More</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-visual-card">
+                    <div class="mini-chart-header">
+                        <span class="mini-chart-label">Carbon Intensity (Live)</span>
+                        <span class="mini-chart-value live-pulse">720 <small>gCO₂/kWh</small></span>
+                    </div>
+                    <canvas id="mini-chart-hero" width="360" height="120"></canvas>
+                    <div class="mini-chart-footer">
+                        <span class="tag tag-warning">High Emission Period</span>
+                        <span class="tag tag-success">Optimal in 3h</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar" id="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number" data-target="21" data-suffix="%">0%</div>
+                <div class="stat-label">Average Carbon Reduction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="30" data-suffix="%">0%</div>
+                <div class="stat-label">Maximum Emission Savings</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="99.9" data-suffix="%" data-decimals="1">0%</div>
+                <div class="stat-label">SLA Compliance</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number net-zero-badge">Net-Zero</div>
+                <div class="stat-label">Infrastructure Ready</div>
+            </div>
+        </div>
+
+        <!-- How CAML Works -->
+        <div class="section" id="how-it-works">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">Intelligent Carbon-Aware Scheduling</h2>
+                <p class="section-desc">CAML uses real-time carbon intensity forecasts to schedule ML workloads during periods of clean energy availability.</p>
+            </div>
+            <div class="flow-pipeline">
+                <div class="flow-step" data-step="1">
+                    <div class="flow-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15a4 4 0 0 0 4 4h9a5 5 0 1 0-.1-9.999 5.002 5.002 0 1 0-9.78 2.096A4.001 4.001 0 0 0 3 15z"/></svg>
+                    </div>
+                    <h3>Carbon Forecast Data</h3>
+                    <p>Real-time grid carbon intensity data from regional electricity providers.</p>
+                </div>
+                <div class="flow-connector"><div class="flow-arrow"></div></div>
+                <div class="flow-step" data-step="2">
+                    <div class="flow-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    </div>
+                    <h3>Renewable Energy Prediction</h3>
+                    <p>AI-powered forecasting of solar, wind, and hydro energy generation.</p>
+                </div>
+                <div class="flow-connector"><div class="flow-arrow"></div></div>
+                <div class="flow-step" data-step="3">
+                    <div class="flow-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+                    </div>
+                    <h3>CAML Scheduling Engine</h3>
+                    <p>Multi-objective optimizer balancing carbon, latency, and SLA constraints.</p>
+                </div>
+                <div class="flow-connector"><div class="flow-arrow"></div></div>
+                <div class="flow-step" data-step="4">
+                    <div class="flow-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                    </div>
+                    <h3>Workload Optimization</h3>
+                    <p>Intelligent rescheduling and resource allocation for ML pipelines.</p>
+                </div>
+                <div class="flow-connector"><div class="flow-arrow"></div></div>
+                <div class="flow-step" data-step="5">
+                    <div class="flow-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>Reduced Carbon Emissions</h3>
+                    <p>Measurable CO₂ reduction with full audit trail and reporting.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industry Applications -->
+        <div class="section" id="industry-section">
+            <div class="section-header">
+                <span class="section-tag">Applications</span>
+                <h2 class="section-title">Industry Impact</h2>
+                <p class="section-desc">CAML's scheduling intelligence extends across industries that rely on compute-intensive operations.</p>
+            </div>
+            <div class="industry-grid">
+                <div class="industry-card" data-industry="logistics">
+                    <div class="industry-icon">🚛</div>
+                    <h3>Logistics</h3>
+                    <p>Optimize route computation and fleet management ML models during off-peak carbon hours, reducing emissions across global supply networks.</p>
+                    <div class="industry-stat">
+                        <span class="industry-stat-value">18%</span>
+                        <span class="industry-stat-label">Avg. Emission Reduction</span>
+                    </div>
+                    <button class="btn-outline btn-sm" style="margin-top:12px;width:100%;justify-content:center;" data-page="logistics">Explore Dashboard →</button>
+                </div>
+                <div class="industry-card" data-industry="smart-cities">
+                    <div class="industry-icon">🏙️</div>
+                    <h3>Smart Cities</h3>
+                    <p>Schedule urban analytics — traffic prediction, energy grid optimization, and surveillance ML — to align with renewable energy peaks.</p>
+                    <div class="industry-stat">
+                        <span class="industry-stat-value">24%</span>
+                        <span class="industry-stat-label">Avg. Emission Reduction</span>
+                    </div>
+                </div>
+                <div class="industry-card" data-industry="agriculture">
+                    <div class="industry-icon">🌾</div>
+                    <h3>Agriculture</h3>
+                    <p>Run crop yield prediction, soil analysis, and precision farming models during clean energy windows without impacting harvest timelines.</p>
+                    <div class="industry-stat">
+                        <span class="industry-stat-value">22%</span>
+                        <span class="industry-stat-label">Avg. Emission Reduction</span>
+                    </div>
+                    <button class="btn-outline btn-sm" style="margin-top:12px;width:100%;justify-content:center;" data-page="agriculture">Explore Dashboard →</button>
+                </div>
+                <div class="industry-card" data-industry="supply-chain">
+                    <div class="industry-icon">🔗</div>
+                    <h3>Supply Chain</h3>
+                    <p>Defer demand forecasting and inventory optimization workloads to periods of low carbon intensity across distributed data centers.</p>
+                    <div class="industry-stat">
+                        <span class="industry-stat-value">19%</span>
+                        <span class="industry-stat-label">Avg. Emission Reduction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="section cta-section">
+            <div class="cta-card">
+                <h2>Ready to reduce your AI carbon footprint?</h2>
+                <p>Explore the CAML dashboard and see how intelligent scheduling can cut emissions without compromising performance.</p>
+                <button class="btn-primary btn-large" data-page="dashboard">
+                    <span>Open Dashboard</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">CAML</span>
+                    <p>Carbon-Aware Machine Learning Scheduling</p>
+                    <p class="footer-note">A college engineering project prototype demonstrating sustainable AI infrastructure.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <a href="#" data-page="dashboard">Dashboard</a>
+                        <a href="#" data-page="admin">Admin Panel</a>
+                        <a href="#" data-page="applications">Applications</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">API Reference</a>
+                        <a href="#">Research Paper</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Careers</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 CAML — Carbon-Aware Machine Learning Scheduling. All rights reserved.</p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- ======== DASHBOARD PAGE ======== -->
+    <section id="page-dashboard" class="page">
+        <div class="dashboard-container">
+            <!-- Dashboard Header -->
+            <div class="dash-header">
+                <div>
+                    <h1 class="dash-title">Operations Dashboard</h1>
+                    <p class="dash-subtitle">Real-time carbon intelligence &amp; workload management</p>
+                </div>
+                <div class="dash-header-actions">
+                    <div class="status-indicator">
+                        <span class="status-dot live"></span>
+                        <span>Live Monitoring</span>
+                    </div>
+                    <span class="dash-time" id="dash-time">--:--:-- AM</span>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid" id="kpi-grid">
+                <div class="kpi-card" id="kpi-carbon">
+                    <div class="kpi-header">
+                        <span class="kpi-icon kpi-icon-danger">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </span>
+                        <span class="kpi-trend kpi-trend-down">↓ 12%</span>
+                    </div>
+                    <div class="kpi-value" id="kpi-carbon-val">720</div>
+                    <div class="kpi-unit">gCO₂/kWh</div>
+                    <div class="kpi-label">Current Grid Carbon Intensity</div>
+                    <div class="kpi-bar"><div class="kpi-bar-fill" style="width:72%; background: linear-gradient(90deg, #ff6b6b, #ee5a24);"></div></div>
+                </div>
+                <div class="kpi-card" id="kpi-forecast">
+                    <div class="kpi-header">
+                        <span class="kpi-icon kpi-icon-success">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </span>
+                        <span class="kpi-trend kpi-trend-up">▼ 67%</span>
+                    </div>
+                    <div class="kpi-value" id="kpi-forecast-val">240</div>
+                    <div class="kpi-unit">gCO₂/kWh in 3 hours</div>
+                    <div class="kpi-label">Forecast Carbon Intensity</div>
+                    <div class="kpi-bar"><div class="kpi-bar-fill" style="width:24%; background: linear-gradient(90deg, #00e68a, #00b894);"></div></div>
+                </div>
+                <div class="kpi-card" id="kpi-renewable">
+                    <div class="kpi-header">
+                        <span class="kpi-icon kpi-icon-info">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                        </span>
+                        <span class="kpi-trend kpi-trend-up">↑ 8%</span>
+                    </div>
+                    <div class="kpi-value" id="kpi-renewable-val">72<small>%</small></div>
+                    <div class="kpi-unit">Renewable Sources</div>
+                    <div class="kpi-label">Renewable Energy Availability</div>
+                    <div class="kpi-bar"><div class="kpi-bar-fill" style="width:72%; background: linear-gradient(90deg, #54a0ff, #00d2d3);"></div></div>
+                </div>
+                <div class="kpi-card" id="kpi-savings">
+                    <div class="kpi-header">
+                        <span class="kpi-icon kpi-icon-warning">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                        </span>
+                        <span class="kpi-trend kpi-trend-up">↑ 5%</span>
+                    </div>
+                    <div class="kpi-value" id="kpi-savings-val">31<small>%</small></div>
+                    <div class="kpi-unit">Achievable Today</div>
+                    <div class="kpi-label">Potential Carbon Savings</div>
+                    <div class="kpi-bar"><div class="kpi-bar-fill" style="width:31%; background: linear-gradient(90deg, #feca57, #ff9f43);"></div></div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="dash-row">
+                <!-- Carbon Forecast Chart -->
+                <div class="dash-card chart-card" id="carbon-chart-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Carbon Intensity Forecast</h3>
+                            <p class="card-subtitle">24-hour grid carbon projection</p>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-dot" style="background:#ff6b6b;"></span>High</span>
+                            <span class="legend-item"><span class="legend-dot" style="background:#feca57;"></span>Medium</span>
+                            <span class="legend-item"><span class="legend-dot" style="background:#00e68a;"></span>Low (Optimal)</span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="carbon-chart" width="800" height="300"></canvas>
+                    </div>
+                    <div class="chart-footer">
+                        <div class="chart-info">
+                            <span class="tag tag-success">⚡ Optimal Window: 5:00 PM – 7:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Explainer -->
+                <div class="dash-card explainer-card" id="explainer-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Scheduling Decision</h3>
+                            <p class="card-subtitle">AI-driven recommendation</p>
+                        </div>
+                        <span class="tag tag-info">Auto</span>
+                    </div>
+                    <div class="explainer-content">
+                        <div class="explainer-scenario">
+                            <div class="explainer-icon">🧠</div>
+                            <div>
+                                <h4>Training Job A</h4>
+                                <p>Arrived at 2:00 PM • GPU-intensive • ~4h runtime</p>
+                            </div>
+                        </div>
+                        <div class="explainer-comparison">
+                            <div class="explainer-now">
+                                <span class="explainer-label">Now (2 PM)</span>
+                                <span class="explainer-value danger">700</span>
+                                <span class="explainer-unit">gCO₂/kWh</span>
+                                <div class="explainer-bar-wrap"><div class="explainer-bar" style="width:70%;background:#ff6b6b;"></div></div>
+                            </div>
+                            <div class="explainer-arrow">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </div>
+                            <div class="explainer-later">
+                                <span class="explainer-label">Optimized (5 PM)</span>
+                                <span class="explainer-value success">250</span>
+                                <span class="explainer-unit">gCO₂/kWh</span>
+                                <div class="explainer-bar-wrap"><div class="explainer-bar" style="width:25%;background:#00e68a;"></div></div>
+                            </div>
+                        </div>
+                        <div class="explainer-decision">
+                            <div class="decision-badge">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                Decision: Delay until 5:00 PM
+                            </div>
+                            <div class="reduction-display">
+                                <span class="reduction-number">64%</span>
+                                <span class="reduction-label">Estimated Carbon Reduction</span>
+                            </div>
+                        </div>
+                        <div class="explainer-impact-row">
+                            <div class="impact-item">
+                                <span class="impact-val">450</span>
+                                <span class="impact-label">gCO₂ saved per kWh</span>
+                            </div>
+                            <div class="impact-item">
+                                <span class="impact-val">~1.8 kg</span>
+                                <span class="impact-label">Total CO₂ avoided</span>
+                            </div>
+                            <div class="impact-item">
+                                <span class="impact-val">✓ SLA</span>
+                                <span class="impact-label">Deadline met</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workload Scheduler -->
+            <div class="dash-card scheduler-card" id="scheduler-card">
+                <div class="card-header">
+                    <div>
+                        <h3>Workload Scheduler</h3>
+                        <p class="card-subtitle">Active and queued ML workloads</p>
+                    </div>
+                    <div class="scheduler-actions-header">
+                        <button class="btn-outline btn-sm" id="btn-optimize-all">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                            Optimize All
+                        </button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="scheduler-table" id="scheduler-table">
+                        <thead>
+                            <tr>
+                                <th>Job Name</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th>Carbon Impact</th>
+                                <th>Recommended Start</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduler-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== ADMIN PANEL ======== -->
+    <section id="page-admin" class="page">
+        <div class="dashboard-container">
+            <div class="dash-header">
+                <div>
+                    <h1 class="dash-title">Admin Panel</h1>
+                    <p class="dash-subtitle">System monitoring &amp; historical analytics</p>
+                </div>
+                <div class="dash-header-actions">
+                    <div class="status-indicator">
+                        <span class="status-dot live"></span>
+                        <span>All Systems Operational</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin KPIs -->
+            <div class="kpi-grid admin-kpi-grid">
+                <div class="kpi-card admin-kpi">
+                    <div class="kpi-header">
+                        <span class="kpi-icon kpi-icon-info">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        </span>
+                    </div>
+                    <div class="kpi-value" id="admin-active-jobs">14</div>
+                    <div class="kpi-label">Active Jobs</div>
+                </div>
+                <div class="kpi-card admin-kpi">
+                    <div class="kpi-header">
+                        <span class="kpi-icon kpi-icon-success">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                    </div>
+                    <div class="kpi-value" id="admin-carbon-saved">847 <small>kg</small></div>
+                    <div class="kpi-label">Carbon Saved Today</div>
+                </div>
+                <div class="kpi-card admin-kpi">
+                    <div class="kpi-header">
+                        <span class="kpi-icon kpi-icon-info">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+                        </span>
+                    </div>
+                    <div class="kpi-value" id="admin-renewable">68<small>%</small></div>
+                    <div class="kpi-label">Renewable Energy Usage</div>
+                </div>
+                <div class="kpi-card admin-kpi">
+                    <div class="kpi-header">
+                        <span class="kpi-icon kpi-icon-warning">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        </span>
+                    </div>
+                    <div class="kpi-value" id="admin-reduction">21<small>%</small></div>
+                    <div class="kpi-label">Historical Emission Reduction</div>
+                </div>
+            </div>
+
+            <!-- Admin Charts -->
+            <div class="dash-row">
+                <div class="dash-card chart-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Weekly Carbon Savings</h3>
+                            <p class="card-subtitle">kg CO₂ saved per day (last 7 days)</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="admin-bar-chart" width="700" height="280"></canvas>
+                    </div>
+                </div>
+                <div class="dash-card chart-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Energy Source Mix</h3>
+                            <p class="card-subtitle">Current grid composition</p>
+                        </div>
+                    </div>
+                    <div class="chart-container donut-chart-container">
+                        <canvas id="admin-donut-chart" width="280" height="280"></canvas>
+                        <div class="donut-legend" id="donut-legend"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Jobs Monitor -->
+            <div class="dash-card">
+                <div class="card-header">
+                    <div>
+                        <h3>Active Job Monitor</h3>
+                        <p class="card-subtitle">Real-time workload status</p>
+                    </div>
+                </div>
+                <div class="jobs-monitor" id="jobs-monitor">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== APPLICATIONS PAGE ======== -->
+    <section id="page-applications" class="page">
+        <div class="dashboard-container">
+            <div class="dash-header">
+                <div>
+                    <h1 class="dash-title">Industry Applications</h1>
+                    <p class="dash-subtitle">How CAML reduces carbon emissions across sectors</p>
+                </div>
+            </div>
+            <div class="applications-detail-grid">
+                <div class="app-detail-card">
+                    <div class="app-detail-header">
+                        <span class="app-detail-icon">🚛</span>
+                        <h2>Logistics &amp; Transportation</h2>
+                    </div>
+                    <p>Modern logistics companies run GPU-intensive route optimization and demand prediction models continuously. CAML intelligently defers non-urgent batch computations — such as weekly fleet rebalancing, predictive maintenance analytics, and warehouse inventory forecasting — to periods when the electricity grid runs on cleaner energy.</p>
+                    <div class="app-metrics">
+                        <div class="app-metric"><span class="app-metric-val">18%</span><span>Carbon Reduction</span></div>
+                        <div class="app-metric"><span class="app-metric-val">$240K</span><span>Annual Savings</span></div>
+                        <div class="app-metric"><span class="app-metric-val">99.8%</span><span>SLA Maintained</span></div>
+                    </div>
+                </div>
+                <div class="app-detail-card">
+                    <div class="app-detail-header">
+                        <span class="app-detail-icon">🏙️</span>
+                        <h2>Smart Cities</h2>
+                    </div>
+                    <p>Urban infrastructure generates massive volumes of sensor data that feeds ML models for traffic flow optimization, energy grid management, public safety monitoring, and air quality prediction. CAML schedules these batch analytics during high-renewable periods while keeping real-time critical services uninterrupted.</p>
+                    <div class="app-metrics">
+                        <div class="app-metric"><span class="app-metric-val">24%</span><span>Carbon Reduction</span></div>
+                        <div class="app-metric"><span class="app-metric-val">$1.2M</span><span>Annual Savings</span></div>
+                        <div class="app-metric"><span class="app-metric-val">99.9%</span><span>SLA Maintained</span></div>
+                    </div>
+                </div>
+                <div class="app-detail-card">
+                    <div class="app-detail-header">
+                        <span class="app-detail-icon">🌾</span>
+                        <h2>Agriculture</h2>
+                    </div>
+                    <p>Precision agriculture relies on satellite imagery analysis, crop yield prediction, soil health modeling, and weather-based irrigation scheduling. These ML workloads are inherently delay-tolerant, making them ideal candidates for carbon-aware scheduling without any operational impact.</p>
+                    <div class="app-metrics">
+                        <div class="app-metric"><span class="app-metric-val">22%</span><span>Carbon Reduction</span></div>
+                        <div class="app-metric"><span class="app-metric-val">$180K</span><span>Annual Savings</span></div>
+                        <div class="app-metric"><span class="app-metric-val">100%</span><span>SLA Maintained</span></div>
+                    </div>
+                </div>
+                <div class="app-detail-card">
+                    <div class="app-detail-header">
+                        <span class="app-detail-icon">🔗</span>
+                        <h2>Supply Chain</h2>
+                    </div>
+                    <p>Global supply chains use ML for demand forecasting, supplier risk analysis, and inventory optimization across distributed data centers. CAML coordinates workload placement across geographically distributed clusters, preferring regions with the cleanest grid at any given moment.</p>
+                    <div class="app-metrics">
+                        <div class="app-metric"><span class="app-metric-val">19%</span><span>Carbon Reduction</span></div>
+                        <div class="app-metric"><span class="app-metric-val">$320K</span><span>Annual Savings</span></div>
+                        <div class="app-metric"><span class="app-metric-val">99.7%</span><span>SLA Maintained</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== LOGISTICS PAGE ======== -->
+    <section id="page-logistics" class="page">
+        <div class="dashboard-container">
+            <!-- Module Status Bar -->
+            <div class="module-status-bar">
+                <div class="module-search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    <input type="text" placeholder="Search assets, routes, zones, or insights..." class="module-search-input">
+                </div>
+                <div class="carbon-live-indicator">
+                    <span class="status-dot live"></span>
+                    <span>Live Carbon Intensity</span>
+                    <strong class="carbon-live-value">128 gCO₂/kWh</strong>
+                    <span class="tag tag-success">Low</span>
+                </div>
+                <div class="module-meta">
+                    <span class="module-date">Jul 14 – Jul 20, 2026 📅</span>
+                    <span class="module-refresh">Auto refresh: <strong style="color: var(--green-primary)">On</strong></span>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="module-tabs" id="logistics-tabs">
+                <button class="module-tab active" data-ltab="fleet">🚛 Route &amp; Fleet Optimization</button>
+                <button class="module-tab" data-ltab="traffic">🚦 Smart Traffic</button>
+            </div>
+
+            <!-- Fleet Tab -->
+            <div class="module-tab-content active" id="ltab-fleet">
+                <!-- KPIs -->
+                <div class="module-kpi-row">
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(0,230,138,0.1);color:#00e68a;">🌿</span>
+                            <span class="mkpi-label">CO₂ Saved (This Week)</span>
+                        </div>
+                        <div class="mkpi-value">156.8<small>t</small></div>
+                        <div class="mkpi-trend positive">↑ 18.6% vs last week</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(84,160,255,0.1);color:#54a0ff;">⛽</span>
+                            <span class="mkpi-label">Fuel Saved (This Week)</span>
+                        </div>
+                        <div class="mkpi-value">52,894<small>L</small></div>
+                        <div class="mkpi-trend positive">↑ 14.3% vs last week</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(0,210,211,0.1);color:#00d2d3;">💰</span>
+                            <span class="mkpi-label">Cost Saved (This Week)</span>
+                        </div>
+                        <div class="mkpi-value">$208,740</div>
+                        <div class="mkpi-trend positive">↑ 21.7% vs last week</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(162,155,254,0.1);color:#a29bfe;">✓</span>
+                            <span class="mkpi-label">Deliveries Completed</span>
+                        </div>
+                        <div class="mkpi-value">1,247</div>
+                        <div class="mkpi-trend positive">↑ 8.1% vs last week</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(254,202,87,0.1);color:#feca57;">⏱</span>
+                            <span class="mkpi-label">On-Time Performance</span>
+                        </div>
+                        <div class="mkpi-value">92.4<small>%</small></div>
+                        <div class="mkpi-trend positive">↑ 4.7% vs last week</div>
+                    </div>
+                </div>
+
+                <!-- Maps Row -->
+                <div class="maps-row">
+                    <div class="map-card">
+                        <h3 class="map-title">Eco-Routing Map</h3>
+                        <div class="map-body">
+                            <div class="map-legend-overlay">
+                                <h4>Carbon Optimality</h4>
+                                <div class="map-legend-items">
+                                    <span><i style="background:#00e68a"></i> Very Low</span>
+                                    <span><i style="background:#7bed9f"></i> Low</span>
+                                    <span><i style="background:#feca57"></i> Medium</span>
+                                    <span><i style="background:#ff9f43"></i> High</span>
+                                    <span><i style="background:#ff6b6b"></i> Very High</span>
+                                </div>
+                            </div>
+                            <canvas id="eco-routing-canvas" width="600" height="350"></canvas>
+                            <div class="map-controls">
+                                <button class="map-ctrl-btn">+</button>
+                                <button class="map-ctrl-btn">−</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-card">
+                        <h3 class="map-title">Live Traffic Map</h3>
+                        <div class="map-body">
+                            <div class="map-legend-overlay">
+                                <h4>Traffic Flow</h4>
+                                <div class="map-legend-items">
+                                    <span><i style="background:#00e68a"></i> Free Flow</span>
+                                    <span><i style="background:#feca57"></i> Moderate</span>
+                                    <span><i style="background:#ff9f43"></i> Slow</span>
+                                    <span><i style="background:#ff6b6b"></i> Heavy</span>
+                                </div>
+                                <div style="margin-top:6px;border-top:1px solid rgba(255,255,255,0.08);padding-top:6px;">
+                                    <span style="display:flex;align-items:center;gap:6px;font-size:0.7rem;color:var(--text-secondary);"><i style="background:#ff6b6b;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:8px solid #ff6b6b;"></i> Incident</span>
+                                    <span style="display:flex;align-items:center;gap:6px;font-size:0.7rem;color:var(--text-secondary);margin-top:4px;"><i style="background:#54a0ff;width:8px;height:8px;border-radius:2px;"></i> Sensor</span>
+                                </div>
+                            </div>
+                            <canvas id="traffic-map-canvas" width="600" height="350"></canvas>
+                            <div class="map-controls">
+                                <button class="map-ctrl-btn">+</button>
+                                <button class="map-ctrl-btn">−</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Panels -->
+                <div class="bottom-panels">
+                    <div class="panel-card">
+                        <h3>Fleet Status</h3>
+                        <div class="fleet-stats">
+                            <div class="fleet-stat">
+                                <span class="fleet-stat-label">Total Vehicles</span>
+                                <span class="fleet-stat-value">512</span>
+                            </div>
+                            <div class="fleet-stat">
+                                <span class="fleet-stat-label">On Route</span>
+                                <span class="fleet-stat-value" id="fleet-onroute">387 <small>75.6%</small></span>
+                            </div>
+                            <div class="fleet-stat">
+                                <span class="fleet-stat-label">Idle</span>
+                                <span class="fleet-stat-value" id="fleet-idle">78 <small>15.2%</small></span>
+                            </div>
+                            <div class="fleet-stat">
+                                <span class="fleet-stat-label">Maintenance</span>
+                                <span class="fleet-stat-value">23 <small>4.5%</small></span>
+                            </div>
+                            <div class="fleet-stat">
+                                <span class="fleet-stat-label">Offline</span>
+                                <span class="fleet-stat-value">24 <small>4.7%</small></span>
+                            </div>
+                        </div>
+                        <div class="fleet-bar-container">
+                            <div class="fleet-bar">
+                                <div class="fleet-bar-seg" style="width:75.6%;background:#00e68a;"></div>
+                                <div class="fleet-bar-seg" style="width:15.2%;background:#feca57;"></div>
+                                <div class="fleet-bar-seg" style="width:4.5%;background:#ff9f43;"></div>
+                                <div class="fleet-bar-seg" style="width:4.7%;background:#636e72;"></div>
+                            </div>
+                            <div class="fleet-bar-legend">
+                                <span><i style="background:#00e68a"></i> On Route</span>
+                                <span><i style="background:#feca57"></i> Idle</span>
+                                <span><i style="background:#ff9f43"></i> Maintenance</span>
+                                <span><i style="background:#636e72"></i> Offline</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-card">
+                        <h3>Traffic Overview <small>(This Week)</small></h3>
+                        <div class="traffic-stats">
+                            <div class="traffic-stat">
+                                <span class="traffic-stat-icon">»</span>
+                                <div>
+                                    <span class="traffic-stat-label">Avg Speed</span>
+                                    <span class="traffic-stat-value">28.6 <small>km/h</small></span>
+                                </div>
+                            </div>
+                            <div class="traffic-stat">
+                                <span class="traffic-stat-icon" style="color:#feca57;">⚡</span>
+                                <div>
+                                    <span class="traffic-stat-label">Congestion Index</span>
+                                    <span class="traffic-stat-value">0.62</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="traffic-metrics">
+                            <div class="traffic-metric-card">
+                                <span class="tm-val">4.2M</span>
+                                <span class="tm-label">Vehicles Tracked</span>
+                            </div>
+                            <div class="traffic-metric-card">
+                                <span class="tm-val">127</span>
+                                <span class="tm-label">Active Sensors</span>
+                            </div>
+                            <div class="traffic-metric-card">
+                                <span class="tm-val">3</span>
+                                <span class="tm-label">Active Incidents</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traffic Tab -->
+            <div class="module-tab-content" id="ltab-traffic">
+                <div class="module-kpi-row" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(255,107,107,0.1);color:#ff6b6b;">🚨</span>
+                            <span class="mkpi-label">Active Incidents</span>
+                        </div>
+                        <div class="mkpi-value">3</div>
+                        <div class="mkpi-trend negative">↑ 2 vs yesterday</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(0,230,138,0.1);color:#00e68a;">📡</span>
+                            <span class="mkpi-label">Sensor Coverage</span>
+                        </div>
+                        <div class="mkpi-value">94.2<small>%</small></div>
+                        <div class="mkpi-trend positive">↑ 1.3% vs last week</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(254,202,87,0.1);color:#feca57;">🔄</span>
+                            <span class="mkpi-label">Signal Sync Rate</span>
+                        </div>
+                        <div class="mkpi-value">98.7<small>%</small></div>
+                        <div class="mkpi-trend positive">↑ 0.4% vs last week</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(84,160,255,0.1);color:#54a0ff;">⏱</span>
+                            <span class="mkpi-label">Avg Response Time</span>
+                        </div>
+                        <div class="mkpi-value">2.4<small>min</small></div>
+                        <div class="mkpi-trend positive">↓ 0.8min vs last week</div>
+                    </div>
+                </div>
+
+                <div class="dash-card chart-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Congestion Index (24h)</h3>
+                            <p class="card-subtitle">Real-time traffic congestion tracking</p>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="legend-dot" style="background:#ff6b6b;"></span>Congestion</span>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="traffic-flow-chart" width="800" height="280"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== AGRICULTURE PAGE ======== -->
+    <section id="page-agriculture" class="page">
+        <div class="dashboard-container">
+            <!-- Module Status Bar -->
+            <div class="module-status-bar">
+                <div class="module-search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                    <input type="text" placeholder="Search fields, crops, sensors, or zones..." class="module-search-input">
+                </div>
+                <div class="carbon-live-indicator">
+                    <span class="status-dot live"></span>
+                    <span>Live Carbon Intensity</span>
+                    <strong class="carbon-live-value">96 gCO₂/kWh</strong>
+                    <span class="tag tag-success">Very Low</span>
+                </div>
+                <div class="module-meta">
+                    <span class="module-date">Jul 14 – Jul 20, 2026 📅</span>
+                    <span class="module-refresh">Auto refresh: <strong style="color: var(--green-primary)">On</strong></span>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="module-tabs">
+                <button class="module-tab active" data-atab="analytics">🌾 Crop Analytics</button>
+                <button class="module-tab" data-atab="monitoring">📡 Field Monitoring</button>
+            </div>
+
+            <!-- Crop Analytics Tab -->
+            <div class="module-tab-content active" id="atab-analytics">
+                <!-- KPIs -->
+                <div class="module-kpi-row">
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(0,230,138,0.1);color:#00e68a;">🌿</span>
+                            <span class="mkpi-label">CO₂ Saved (This Week)</span>
+                        </div>
+                        <div class="mkpi-value">42.3<small>t</small></div>
+                        <div class="mkpi-trend positive">↑ 12.4% vs last week</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(84,160,255,0.1);color:#54a0ff;">💧</span>
+                            <span class="mkpi-label">Water Saved (This Week)</span>
+                        </div>
+                        <div class="mkpi-value">18,450<small>L</small></div>
+                        <div class="mkpi-trend positive">↑ 9.2% vs last week</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(0,210,211,0.1);color:#00d2d3;">📈</span>
+                            <span class="mkpi-label">Yield Improvement</span>
+                        </div>
+                        <div class="mkpi-value">12.8<small>%</small></div>
+                        <div class="mkpi-trend positive">↑ 3.1% vs last season</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(162,155,254,0.1);color:#a29bfe;">🗺️</span>
+                            <span class="mkpi-label">Fields Monitored</span>
+                        </div>
+                        <div class="mkpi-value">156</div>
+                        <div class="mkpi-trend positive">↑ 12 new this month</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(254,202,87,0.1);color:#feca57;">🌾</span>
+                            <span class="mkpi-label">Harvest Efficiency</span>
+                        </div>
+                        <div class="mkpi-value">94.2<small>%</small></div>
+                        <div class="mkpi-trend positive">↑ 2.8% vs last season</div>
+                    </div>
+                </div>
+
+                <!-- Maps Row -->
+                <div class="maps-row">
+                    <div class="map-card">
+                        <h3 class="map-title">Field Health Map</h3>
+                        <div class="map-body">
+                            <div class="map-legend-overlay">
+                                <h4>Crop Health Index</h4>
+                                <div class="map-legend-items">
+                                    <span><i style="background:#00e68a"></i> Excellent (85%+)</span>
+                                    <span><i style="background:#7bed9f"></i> Good (70-85%)</span>
+                                    <span><i style="background:#feca57"></i> Moderate (50-70%)</span>
+                                    <span><i style="background:#ff6b6b"></i> Attention (&lt;50%)</span>
+                                </div>
+                            </div>
+                            <canvas id="field-health-canvas" width="600" height="350"></canvas>
+                            <div class="map-controls">
+                                <button class="map-ctrl-btn">+</button>
+                                <button class="map-ctrl-btn">−</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-card">
+                        <h3 class="map-title">Crop Yield Forecast</h3>
+                        <div class="map-body" style="padding:16px 16px 8px;">
+                            <div class="chart-legend" style="margin-bottom:8px;">
+                                <span class="legend-item"><span class="legend-dot" style="background:#00e68a;"></span>Actual Yield</span>
+                                <span class="legend-item"><span class="legend-dot" style="background:rgba(0,230,138,0.4);"></span>Projected (dashed)</span>
+                                <span class="legend-item"><span class="legend-dot" style="background:#54a0ff;"></span>Current Month</span>
+                            </div>
+                            <canvas id="crop-yield-chart" width="800" height="280"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Panels -->
+                <div class="bottom-panels">
+                    <div class="panel-card">
+                        <h3>Weather &amp; Conditions</h3>
+                        <div class="weather-grid">
+                            <div class="weather-item">
+                                <span class="weather-item-icon">🌤️</span>
+                                <span class="weather-item-value">28°C</span>
+                                <span class="weather-item-label">Temperature</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="weather-item-icon">💧</span>
+                                <span class="weather-item-value">68%</span>
+                                <span class="weather-item-label">Humidity</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="weather-item-icon">🌬️</span>
+                                <span class="weather-item-value">12 km/h</span>
+                                <span class="weather-item-label">Wind Speed</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="weather-item-icon">🌧️</span>
+                                <span class="weather-item-value">15%</span>
+                                <span class="weather-item-label">Rain Probability</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-card">
+                        <h3>Irrigation Schedule <small>(Carbon-Optimized)</small></h3>
+                        <div class="irrigation-schedule">
+                            <div class="irrigation-item">
+                                <span class="irrigation-time">5:00 AM</span>
+                                <span class="irrigation-zone">Zone A — Fields A1, A2, A3</span>
+                                <span class="irrigation-carbon tag tag-success">Low Carbon</span>
+                            </div>
+                            <div class="irrigation-item">
+                                <span class="irrigation-time">6:30 AM</span>
+                                <span class="irrigation-zone">Zone B — Fields B1, B2, B3</span>
+                                <span class="irrigation-carbon tag tag-success">Low Carbon</span>
+                            </div>
+                            <div class="irrigation-item">
+                                <span class="irrigation-time">7:00 PM</span>
+                                <span class="irrigation-zone">Zone C — Fields C1, C2</span>
+                                <span class="irrigation-carbon tag tag-success">Low Carbon</span>
+                            </div>
+                            <div class="irrigation-item">
+                                <span class="irrigation-time">8:30 PM</span>
+                                <span class="irrigation-zone">Zone D — Fields D1, D2, D3</span>
+                                <span class="irrigation-carbon tag tag-info">Moderate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Field Monitoring Tab -->
+            <div class="module-tab-content" id="atab-monitoring">
+                <div class="module-kpi-row" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(84,160,255,0.1);color:#54a0ff;">📡</span>
+                            <span class="mkpi-label">Active Sensors</span>
+                        </div>
+                        <div class="mkpi-value">342</div>
+                        <div class="mkpi-trend positive">98.4% online</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(0,230,138,0.1);color:#00e68a;">💧</span>
+                            <span class="mkpi-label">Soil Moisture (Avg)</span>
+                        </div>
+                        <div class="mkpi-value" id="agri-soil-moisture">64.2%</div>
+                        <div class="mkpi-trend positive">Optimal range</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(254,202,87,0.1);color:#feca57;">🌡️</span>
+                            <span class="mkpi-label">Soil Temperature</span>
+                        </div>
+                        <div class="mkpi-value" id="agri-soil-temp">24.3°C</div>
+                        <div class="mkpi-trend positive">Within range</div>
+                    </div>
+                    <div class="module-kpi-card">
+                        <div class="mkpi-head">
+                            <span class="mkpi-icon" style="background:rgba(255,107,107,0.1);color:#ff6b6b;">⚠</span>
+                            <span class="mkpi-label">Alerts</span>
+                        </div>
+                        <div class="mkpi-value">2</div>
+                        <div class="mkpi-trend negative">Fields D1, B2</div>
+                    </div>
+                </div>
+
+                <div class="dash-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Sensor Network Status</h3>
+                            <p class="card-subtitle">Real-time IoT sensor readings across all fields</p>
+                        </div>
+                    </div>
+                    <div class="sensor-grid">
+                        <div class="sensor-card">
+                            <div class="sensor-card-header">
+                                <span class="sensor-card-name">Soil Moisture A1</span>
+                                <span class="status-badge status-running">Live</span>
+                            </div>
+                            <div class="sensor-card-value" style="color:#54a0ff;">72%</div>
+                            <div class="sensor-card-unit">Volumetric Water Content</div>
+                            <div class="sensor-card-bar"><div class="sensor-card-bar-fill" style="width:72%;background:#54a0ff;"></div></div>
+                        </div>
+                        <div class="sensor-card">
+                            <div class="sensor-card-header">
+                                <span class="sensor-card-name">Temperature B2</span>
+                                <span class="status-badge status-running">Live</span>
+                            </div>
+                            <div class="sensor-card-value" style="color:#feca57;">26.4°C</div>
+                            <div class="sensor-card-unit">Soil Surface Temp</div>
+                            <div class="sensor-card-bar"><div class="sensor-card-bar-fill" style="width:66%;background:#feca57;"></div></div>
+                        </div>
+                        <div class="sensor-card">
+                            <div class="sensor-card-header">
+                                <span class="sensor-card-name">pH Level C1</span>
+                                <span class="status-badge status-running">Live</span>
+                            </div>
+                            <div class="sensor-card-value" style="color:#00e68a;">6.8</div>
+                            <div class="sensor-card-unit">Soil Acidity</div>
+                            <div class="sensor-card-bar"><div class="sensor-card-bar-fill" style="width:68%;background:#00e68a;"></div></div>
+                        </div>
+                        <div class="sensor-card">
+                            <div class="sensor-card-header">
+                                <span class="sensor-card-name">Nitrogen D1</span>
+                                <span class="status-badge status-waiting">Warning</span>
+                            </div>
+                            <div class="sensor-card-value" style="color:#ff6b6b;">Low</div>
+                            <div class="sensor-card-unit">N-P-K Level</div>
+                            <div class="sensor-card-bar"><div class="sensor-card-bar-fill" style="width:28%;background:#ff6b6b;"></div></div>
+                        </div>
+                        <div class="sensor-card">
+                            <div class="sensor-card-header">
+                                <span class="sensor-card-name">Light A3</span>
+                                <span class="status-badge status-running">Live</span>
+                            </div>
+                            <div class="sensor-card-value" style="color:#feca57;">42K lux</div>
+                            <div class="sensor-card-unit">Solar Irradiance</div>
+                            <div class="sensor-card-bar"><div class="sensor-card-bar-fill" style="width:84%;background:#feca57;"></div></div>
+                        </div>
+                        <div class="sensor-card">
+                            <div class="sensor-card-header">
+                                <span class="sensor-card-name">Wind B3</span>
+                                <span class="status-badge status-running">Live</span>
+                            </div>
+                            <div class="sensor-card-value" style="color:#00d2d3;">14 km/h</div>
+                            <div class="sensor-card-unit">Ground Level Wind</div>
+                            <div class="sensor-card-bar"><div class="sensor-card-bar-fill" style="width:35%;background:#00d2d3;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
