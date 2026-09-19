@@ -2,8 +2,6 @@
 
 ⚡ A fully interactive, front-end-only dashboard demo for an IDT (Innovation, Design & Thinking) course project. CAML explores how ML workload scheduling can shift compute jobs to run when grid electricity is cleanest — cutting the carbon footprint of AI infrastructure without touching model architecture.
 
-**[Live Demo](#)** — replace with your GitHub Pages link once deployed.
-
 ## Overview
 
 CAML is a single-page app (vanilla HTML/CSS/JS, no build step, no backend) that simulates a real-time carbon-aware scheduling platform across four modules:
